@@ -23,6 +23,7 @@ namespace MedHelpWS
 
 
         //apurate
+        //Entendiste Jorgito?... 
         [WebMethod]
         public string Prueba()
         {
