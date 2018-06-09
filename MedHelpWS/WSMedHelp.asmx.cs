@@ -69,7 +69,7 @@ namespace MedHelpWS
         [WebMethod]
         public string Prueba2()
         {
-            return "que relajo...";
+            return "A vos te Vale";
         }
     }
 }
