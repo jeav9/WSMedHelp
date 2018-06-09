@@ -24,9 +24,10 @@ namespace MedHelpWS
 
         //apurate
         [WebMethod]
-        public string Prueba(){
-            return "Para que entiendan";
-            }
+        public string Prueba()
+        {
+            return "Para que Elias entienda";
+        }
 
         [WebMethod]
         public void AgregarPaciente(Paciente pc)
