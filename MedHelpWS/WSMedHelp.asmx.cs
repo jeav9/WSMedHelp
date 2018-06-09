@@ -23,6 +23,8 @@ namespace MedHelpWS
 
 
         //apurate
+        //Entendiste Jorgito?... 
+        // Simon elias
         [WebMethod]
         public string Prueba()
         {
