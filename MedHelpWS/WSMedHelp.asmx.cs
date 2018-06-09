@@ -65,5 +65,11 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+
+        [WebMethod]
+        public string Prueba2()
+        {
+            return "que relajo...";
+        }
     }
 }
