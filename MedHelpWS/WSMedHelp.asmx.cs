@@ -24,6 +24,7 @@ namespace MedHelpWS
 
         //apurate
         //Entendiste Jorgito?... 
+        // Simon elias
         [WebMethod]
         public string Prueba()
         {
@@ -63,6 +64,12 @@ namespace MedHelpWS
                            "'" + Med.Proveedor + "','" + Med.TipoMedicamento + "','" + Med.Cantidad + "','" + Med.CostoUnitario + "');");
 
             con.Desconectar();
+        }
+
+        [WebMethod]
+        public string Prueba2()
+        {
+            return "que relajo...";
         }
     }
 }
