@@ -70,6 +70,7 @@ namespace MedHelpWS
         public string Prueba2()
         {
             return "que relajo...";
+            //no re
         }
     }
 }
