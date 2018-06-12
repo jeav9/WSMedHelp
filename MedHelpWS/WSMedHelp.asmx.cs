@@ -22,14 +22,6 @@ namespace MedHelpWS
         DataSet ds = new DataSet();
 
 
-        //apurate
-        //Entendiste Jorgito?... 
-        // Simon elias
-        [WebMethod]
-        public string Prueba()
-        {
-            return "Para que Elias entienda";
-        }
 
         [WebMethod]
         public void AgregarPaciente(Paciente pc)
@@ -64,14 +56,6 @@ namespace MedHelpWS
                            "'" + Med.Proveedor + "','" + Med.TipoMedicamento + "','" + Med.Cantidad + "','" + Med.CostoUnitario + "');");
 
             con.Desconectar();
-        }
-
-        [WebMethod]
-        public string Prueba2()
-        {
-            return "que relajo...";
-            return "A vos te Vale";
-            return "probando";
         }
     }
 }
