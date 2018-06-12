@@ -25,11 +25,11 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro," +
-            "DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos" +
-            "inner join DetellesMed" +
-            "on DetellesMed.Codigo = Medicamentos.Codigo" +
-            "where Medicamentos.Codigo like '%"+codigo+"%'").Tables[0].DataSet;
+            ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro,
+                                    DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
+                                    inner join DetellesMed
+                                    on DetellesMed.Codigo = Medicamentos.Codigo
+                                    where Medicamentos.Codigo like '%"+codigo+"%'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
