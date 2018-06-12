@@ -77,8 +77,6 @@ namespace MedHelpWS
             con.Desconectar();
         }
 
-        //Codigo Jorge- Carmen////////////
-
         [WebMethod]
         public void AgregarPaciente(Paciente pc)
         {
@@ -91,13 +89,13 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
-
+        [WebMethod]
         public Paciente BuscarPaciente(string id)
         {
             Paciente pc = new Paciente();
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select * from Paciente where id like '" + id + "';");
+            ds= con.seleccionar("select * from Paciente where like ='%"+ id +"%';");
             #region igualar pacientes
             pc.id = ds.Tables[0].Rows[0][0].ToString();
             pc.nombre= ds.Tables[0].Rows[0][1].ToString();
