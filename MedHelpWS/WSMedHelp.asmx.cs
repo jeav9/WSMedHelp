@@ -29,7 +29,7 @@ namespace MedHelpWS
             "DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos" +
             "inner join DetellesMed" +
             "on DetellesMed.Codigo = Medicamentos.Codigo" +
-            "where Medicamentos.Codigo = '"+codigo+"'").Tables[0].DataSet;
+            "where Medicamentos.Codigo like '%"+codigo+"%'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
