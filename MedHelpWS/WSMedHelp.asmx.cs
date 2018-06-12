@@ -88,11 +88,5 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
-<<<<<<< HEAD
-        //prueba de publicacion
-=======
-
-
->>>>>>> 2aaff98b9e6708b811d06c59dacd110d9c397bde
     }
 }
