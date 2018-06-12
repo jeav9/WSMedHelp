@@ -95,7 +95,7 @@ namespace MedHelpWS
             Paciente pc = new Paciente();
             DataSet ds = new DataSet();
             con.Conectar();
-            ds= con.seleccionar("select * from Paciente where like ='%"+ id +"%';");
+            ds= con.seleccionar("select * from Paciente where like '%"+ id +"%';");
             #region igualar pacientes
             pc.id = ds.Tables[0].Rows[0][0].ToString();
             pc.nombre= ds.Tables[0].Rows[0][1].ToString();
