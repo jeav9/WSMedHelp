@@ -57,7 +57,6 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
-<<<<<<< HEAD
 
         [WebMethod]
         public void ModificarMedicamentos(Medicamentos Med)
@@ -79,7 +78,6 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
-=======
->>>>>>> f352770ac96b479eb2f33be2b979e6116201a2a4
+
     }
 }
