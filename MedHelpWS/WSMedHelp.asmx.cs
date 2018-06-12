@@ -19,10 +19,11 @@ namespace MedHelpWS
     public class WSMedHelp : System.Web.Services.WebService
     {
         ConexionSql.SqlServer con = new ConexionSql.SqlServer();
-        DataSet ds = new DataSet();
+        
         [WebMethod]
         public DataSet MostrarTabla(string codigo)
         {
+            DataSet ds = new DataSet();
             con.Conectar();
             ds = con.seleccionar("select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro," +
             "DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos" +
