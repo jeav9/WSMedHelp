@@ -19,7 +19,10 @@ namespace MedHelpWS
     public class WSMedHelp : System.Web.Services.WebService
     {
         ConexionSql.SqlServer con = new ConexionSql.SqlServer();
-        
+
+
+        //Codigo de elias el relajero//
+        #region Elias
         [WebMethod]
         public DataSet MostrarTabla(string codigo)
         {
@@ -32,20 +35,6 @@ namespace MedHelpWS
                                     where Medicamentos.Codigo like '%"+codigo+"%'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
-        }
-
-
-        [WebMethod]
-        public void AgregarPaciente(Paciente pc)
-        {
-            con.Conectar();
-            con.insomod(@" insert into Paciente
-                           values ('"+pc.id+"','"+pc.nombre+ "','"+pc.apellido+ "','"+pc.genero+"'," +
-                           "'"+pc.fechaNacimiento+"','"+pc.Domicilio+ "',"+pc.Seguro+ ",'"+pc.telefono+"'," +
-                           "'"+pc.estatura+ "','"+pc.sangre+ "','"+pc.peso+ "','"+pc.adicciones+"'," +
-                           "'"+pc.alergias+ "','"+pc.enfermedadFamilia+ "','"+pc.enfermedadPequeno+"');");
-            
-            con.Desconectar();
         }
 
         [WebMethod]
@@ -90,7 +79,28 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+        #endregion
 
-        //prueba push
+
+        //Codigo Jorge- Carmen////////////
+        #region Jorge
+        [WebMethod]
+        public void AgregarPaciente(Paciente pc)
+        {
+            con.Conectar();
+            con.insomod(@" insert into Paciente
+                           values ('" + pc.id + "','" + pc.nombre + "','" + pc.apellido + "','" + pc.genero + "'," +
+                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "'," + pc.Seguro + ",'" + pc.telefono + "'," +
+                           "'" + pc.estatura + "','" + pc.sangre + "','" + pc.peso + "','" + pc.adicciones + "'," +
+                           "'" + pc.alergias + "','" + pc.enfermedadFamilia + "','" + pc.enfermedadPequeno + "');");
+
+            con.Desconectar();
+        }
+
+        public void DiagPaciente()
+        {
+
+        }
+        #endregion
     }
 }
