@@ -20,7 +20,17 @@ namespace MedHelpWS
     {
         ConexionSql.SqlServer con = new ConexionSql.SqlServer();
         DataSet ds = new DataSet();
-
+        [WebMethod]
+        public DataSet MostrarTabla(DataSet ds)
+        {
+            con.Conectar();
+            ds = con.seleccionar("select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro," +
+            "DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos" +
+            "inner join DetellesMed" +
+            "on DetellesMed.Codigo = Medicamentos.Codigo").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
 
 
         [WebMethod]
@@ -78,6 +88,11 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+<<<<<<< HEAD
         //prueba de publicacion
+=======
+
+
+>>>>>>> 2aaff98b9e6708b811d06c59dacd110d9c397bde
     }
 }
