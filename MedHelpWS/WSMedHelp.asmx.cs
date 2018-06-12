@@ -57,5 +57,27 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+
+        [WebMethod]
+        public void ModificarMedicamentos(Medicamentos Med)
+        {
+            con.Conectar();
+            con.insomod(@" update Medicamentos set 
+                           Nombre='" + Med.Nombre + "',Descripcion='" + Med.Descripcion + "',FIngreso='" + Med.FechadeIngreso + "',FVenc='" + Med.FechadeVenc + "',HIngreso=" +
+                           "'" + Med.HoraIngreso + "' where Codigo='"+ Med.Codigo +"'");
+
+            con.Desconectar();
+        }
+
+        [WebMethod]
+        public void ModificarDetMedicamentos(Medicamentos Med)
+        {
+            con.Conectar();
+            con.insomod(@" update DetellesMed set NRegistro='" + Med.NumeroRegistro + "',CompActivo='" + Med.CompActivo + "',Gramaje='" + Med.Gramaje + "',Proveedor=" +
+                           "'" + Med.Proveedor + "',TipoMed='" + Med.TipoMedicamento + "',Cantidad='" + Med.Cantidad + "',CostoUni='" + Med.CostoUnitario + "' where Codigo='" + Med.Codigo + "'");
+
+            con.Desconectar();
+        }
+
     }
 }
