@@ -22,14 +22,6 @@ namespace MedHelpWS
         DataSet ds = new DataSet();
 
 
-        //apurate
-        //Entendiste Jorgito?... 
-        // Simon elias
-        [WebMethod]
-        public string Prueba()
-        {
-            return "Para que Elias entienda";
-        }
 
         [WebMethod]
         public void AgregarPaciente(Paciente pc)
@@ -65,6 +57,7 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+<<<<<<< HEAD
 
         [WebMethod]
         public void ModificarMedicamentos(Medicamentos Med)
@@ -86,5 +79,7 @@ namespace MedHelpWS
 
             con.Desconectar();
         }
+=======
+>>>>>>> f352770ac96b479eb2f33be2b979e6116201a2a4
     }
 }
