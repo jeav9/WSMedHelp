@@ -123,7 +123,28 @@ namespace MedHelpWS
             con.insomod(@"insert into Diagnostico 
                           values ('"+diag.id+ "','"+diag.nombres+ "','"+diag.apellidos+ "','"+diag.genero+ "','"+diag.Nseguro+"'," +
                           "'"+diag.sintomasP+ "','"+diag.observaciones+"');");
+            con.Desconectar();
         }
-
-    }
+        [WebMethod]
+        public void EliminarMedicamentos(Medicamentos Med)
+        {
+            con.Conectar();
+            con.insomod(@"Delete from Medicamentos where Codigo=" + Med.Codigo + "");
+            con.insomod(@"Delete from DetellesMed where Codigo=" + Med.Codigo + "");
+            con.Desconectar();
+        }
+        [WebMethod]
+        public DataSet BuscarMedicamentos(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro,
+                                    DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
+                                    inner join DetellesMed
+                                    on DetellesMed.Codigo = Medicamentos.Codigo
+                                    where Medicamentos.Codigo like '%" + codigo + "%'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+}
 }
