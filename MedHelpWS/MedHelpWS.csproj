@@ -44,7 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConexionSql">
+    <Reference Include="ConexionSql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Semana5\ConexionSql\ConexionSql\bin\Debug\ConexionSql.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
