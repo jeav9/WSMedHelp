@@ -75,6 +75,7 @@
     <Content Include="WSMedHelp.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Diagnostico.cs" />
     <Compile Include="Medicamentos.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
