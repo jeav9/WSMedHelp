@@ -116,6 +116,14 @@ namespace MedHelpWS
             con.Desconectar();
             return pc;
         }
+        [WebMethod]
+        public void AgregarDiag(Diagnostico diag)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Diagnostico 
+                          values ('"+diag.id+ "','"+diag.nombres+ "','"+diag.apellidos+ "','"+diag.genero+ "','"+diag.Nseguro+"'," +
+                          "'"+diag.sintomasP+ "','"+diag.observaciones+"');");
+        }
 
     }
 }
