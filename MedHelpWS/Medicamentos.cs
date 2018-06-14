@@ -19,7 +19,7 @@ namespace MedHelpWS
         public string Proveedor { get; set; }
         public string TipoMedicamento { get; set; }
         public int Cantidad { get; set; }
-        public float CostoUnitario { get; set; }
+        public double CostoUnitario { get; set; }
         
     }
 }
