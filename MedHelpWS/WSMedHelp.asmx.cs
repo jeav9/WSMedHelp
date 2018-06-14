@@ -129,14 +129,8 @@ namespace MedHelpWS
         public void EliminarMedicamentos(Medicamentos Med)
         {
             con.Conectar();
-            con.insomod(@"Delete from Medicamentos where Codigo=" + Med.Codigo + "");
-            con.Desconectar();
-        }
-        [WebMethod]
-        public void EliminarDetMedicamentos(Medicamentos Med)
-        {
-            con.Conectar();
             con.insomod(@"Delete from DetellesMed where Codigo=" + Med.Codigo + "");
+            con.insomod(@"Delete from Medicamentos where Codigo=" + Med.Codigo + "");
             con.Desconectar();
         }
 
