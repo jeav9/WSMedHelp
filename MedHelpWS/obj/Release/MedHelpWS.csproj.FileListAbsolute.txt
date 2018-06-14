@@ -51,7 +51,6 @@ C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHel
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\ConexionSql.dll
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\System.Data.SQLite.dll
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\ConexionSql.pdb
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csprojAssemblyReference.cache

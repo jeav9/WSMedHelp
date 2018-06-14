@@ -90,11 +90,11 @@ namespace MedHelpWS
             con.Desconectar();
         }
         [WebMethod]
-        public DataSet BuscarPaciente(string id)
+        public DataSet BuscarPaciente(string condi,string id)
         { 
             DataSet ds = new DataSet();
             con.Conectar();
-            ds= con.seleccionar("select * from Paciente where id like '%"+id+"%';");
+            ds= con.seleccionar("select * from Paciente where "+condi+" like '%"+id+"%';");
             con.Desconectar();
             return ds;
         }
