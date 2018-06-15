@@ -117,13 +117,12 @@ namespace MedHelpWS
             con.Desconectar();
         }
         [WebMethod]
-        public void AgregarPaciente(Personal Per,MemoryStream MR)
+        public void AgregarPersonal(Personal Per)
         {
                 con.Conectar();
-                con.insomod(@"insert into Personal values (" + Per.ID + ",'" + Per.Nombre + "','" + Per.Apellido + "'," + Per.Identidad + "," +
-                    "" + Per.Genero + "," + Per.Edad + "," + Per.FechadeIngreso + "," + Per.FechadeNac + "," + Per.Email + "," + Per.EstadoCivil + "," + Per.Direccion + "," +
-                    "" + Per.NumCasa + "," + Per.Telefono + "," + Per.Descripcion + "," + Per.TipoAcceso + "," + Per.Especialidad + "," + Per.Funcion + "," + Per.Horaslaborales + "," + Per.Estado + ")");
-                con.InsImagen("update Personal set Foto=@Foto where ID=" + Per.ID + "", MR.GetBuffer());
+                con.insomod(@"insert into Personal(ID,Nombre,Apellido,NIdentidad,Genero,Edad,FechaIng,FechaNac,Email,EstadoCiv,Direccion,NCasa,Telefono,Descripcion,TipoAcc,Especialidad,Funcion,HorasLab,Estado) values (" + Per.ID + ",'" + Per.Nombre + "','" + Per.Apellido + "','" + Per.Identidad + "'," +
+                    "'" + Per.Genero + "'," + Per.Edad + ",'" + Per.FechadeIngreso + "','" + Per.FechadeNac + "','" + Per.Email + "','" + Per.EstadoCivil + "','" + Per.Direccion + "'," +
+                    "'" + Per.NumCasa + "','" + Per.Telefono + "','" + Per.Descripcion + "','" + Per.TipoAcceso + "','" + Per.Especialidad + "','" + Per.Funcion + "','" + Per.Horaslaborales + "','" + Per.Estado + "')");
                 con.Desconectar();
         }
     }

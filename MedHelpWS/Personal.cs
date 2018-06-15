@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 
 namespace MedHelpWS
@@ -26,7 +27,7 @@ namespace MedHelpWS
         public string Especialidad { get; set; }
         public string Funcion { get; set; }
         public string Horaslaborales { get; set; }
-        public double Estado { get; set; }
+        public string Estado { get; set; }
     }
     
 }
