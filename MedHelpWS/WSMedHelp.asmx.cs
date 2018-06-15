@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Data;
-
+using System.Windows;
+using System.IO;
 
 namespace MedHelpWS
 {
@@ -111,16 +112,18 @@ namespace MedHelpWS
         public void EliminarMedicamentos(Medicamentos Med)
         {
             con.Conectar();
+            con.insomod(@"Delete from DetellesMed where Codigo=" + Med.Codigo + "");
             con.insomod(@"Delete from Medicamentos where Codigo=" + Med.Codigo + "");
             con.Desconectar();
         }
         [WebMethod]
-        public void EliminarDetMedicamentos(Medicamentos Med)
+        public void AgregarPersonal(Personal Per)
         {
-            con.Conectar();
-            con.insomod(@"Delete from DetellesMed where Codigo=" + Med.Codigo + "");
-            con.Desconectar();
+                con.Conectar();
+                con.insomod(@"insert into Personal(ID,Nombre,Apellido,NIdentidad,Genero,Edad,FechaIng,FechaNac,Email,EstadoCiv,Direccion,NCasa,Telefono,Descripcion,TipoAcc,Especialidad,Funcion,HorasLab,Estado) values (" + Per.ID + ",'" + Per.Nombre + "','" + Per.Apellido + "','" + Per.Identidad + "'," +
+                    "'" + Per.Genero + "'," + Per.Edad + ",'" + Per.FechadeIngreso + "','" + Per.FechadeNac + "','" + Per.Email + "','" + Per.EstadoCivil + "','" + Per.Direccion + "'," +
+                    "'" + Per.NumCasa + "','" + Per.Telefono + "','" + Per.Descripcion + "','" + Per.TipoAcceso + "','" + Per.Especialidad + "','" + Per.Funcion + "','" + Per.Horaslaborales + "','" + Per.Estado + "')");
+                con.Desconectar();
         }
-
     }
 }
