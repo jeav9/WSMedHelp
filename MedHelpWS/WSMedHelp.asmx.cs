@@ -125,5 +125,14 @@ namespace MedHelpWS
                     "'" + Per.NumCasa + "','" + Per.Telefono + "','" + Per.Descripcion + "','" + Per.TipoAcceso + "','" + Per.Especialidad + "','" + Per.Funcion + "','" + Per.Horaslaborales + "','" + Per.Estado + "')");
                 con.Desconectar();
         }
+        [WebMethod]
+        public DataSet BuscarDoc(string nombre)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds=con.seleccionar("select Nombre, ID from Personal where Nombre like '%"+nombre+"%' ");
+            con.Desconectar();
+            return ds;
+        }
     }
 }
