@@ -84,7 +84,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@" insert into Paciente
                            values ('" + pc.id + "','" + pc.nombre + "','" + pc.apellido + "','" + pc.genero + "'," +
-                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "','" + pc.Seguro + "','" + pc.telefono + "'," +
+                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "'," + pc.Seguro + ",'" + pc.telefono + "'," +
                            "'" + pc.estatura + "','" + pc.sangre + "','" + pc.peso + "','" + pc.adicciones + "'," +
                            "'" + pc.alergias + "','" + pc.enfermedadFamilia + "','" + pc.enfermedadPequeno + "');");
 
@@ -141,7 +141,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID like '%" + codigo + "%' ").Tables[0].DataSet;
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado from Personal where ID like '%" + codigo + "%' ").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
@@ -151,7 +151,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where Nombre like '%" + nombre + "%' ").Tables[0].DataSet;
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado from Personal where Nombre like '%" + nombre + "%' ").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
