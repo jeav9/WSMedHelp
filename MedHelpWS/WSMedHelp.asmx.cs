@@ -141,7 +141,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado from Personal where ID like '%" + codigo + "%' ").Tables[0].DataSet;
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID='" + codigo + "'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
@@ -151,7 +151,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado from Personal where Nombre like '%" + nombre + "%' ").Tables[0].DataSet;
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where Nombre='" + nombre + "' ").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
