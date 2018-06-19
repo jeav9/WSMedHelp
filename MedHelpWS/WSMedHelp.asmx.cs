@@ -155,6 +155,14 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+        [WebMethod]
+        public void AddCitas(Citas c)
+        {
+            con.Conectar();
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "')");
+            con.Desconectar();
+        }
 
     }
 }
