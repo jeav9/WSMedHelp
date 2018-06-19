@@ -159,9 +159,21 @@ namespace MedHelpWS
         public void AddCitas(Citas c)
         {
             con.Conectar();
-            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico)
-                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "')");
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico,Estado_cita)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
             con.Desconectar();
+        }
+        [WebMethod]
+        public DataSet Buscar_Cita(string where, string id)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora,Citas.Duracion,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+                             inner join Paciente
+                             on Paciente.id = Citas.id
+                             where "+where+" like '%"+id+"%' ");
+            con.Desconectar();
+            return ds;
         }
 
     }
