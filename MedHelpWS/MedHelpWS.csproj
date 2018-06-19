@@ -90,6 +90,7 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\MedHelpWS - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MedHelpWS - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\MedHelpWS - Web Deploy2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
