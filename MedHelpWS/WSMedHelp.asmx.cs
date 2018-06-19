@@ -125,6 +125,7 @@ namespace MedHelpWS
                     "'" + Per.NumCasa + "','" + Per.Telefono + "','" + Per.Descripcion + "','" + Per.TipoAcceso + "','" + Per.Especialidad + "','" + Per.Funcion + "','" + Per.Horaslaborales + "','" + Per.Estado + "')");
                 con.Desconectar();
         }
+        //Proba ahora elias
         [WebMethod]
         public DataSet BuscarDoc(string nombre)
         {
