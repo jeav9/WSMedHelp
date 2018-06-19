@@ -8,13 +8,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-<<<<<<< HEAD
-    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
-    <NameOfLastUsedPublishProfile>MedHelpWS - Web Deploy1</NameOfLastUsedPublishProfile>
-=======
     <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
-    <NameOfLastUsedPublishProfile>MedHelpWS - Web Deploy2</NameOfLastUsedPublishProfile>
->>>>>>> 9c35546cac077983ee90bee09aa99311891618e8
+    <NameOfLastUsedPublishProfile>MedHelpWS - Web Deploy1</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
