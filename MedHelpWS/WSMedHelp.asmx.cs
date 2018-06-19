@@ -84,7 +84,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@" insert into Paciente
                            values ('" + pc.id + "','" + pc.nombre + "','" + pc.apellido + "','" + pc.genero + "'," +
-                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "'," + pc.Seguro + ",'" + pc.telefono + "'," +
+                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "','" + pc.Seguro + "','" + pc.telefono + "'," +
                            "'" + pc.estatura + "','" + pc.sangre + "','" + pc.peso + "','" + pc.adicciones + "'," +
                            "'" + pc.alergias + "','" + pc.enfermedadFamilia + "','" + pc.enfermedadPequeno + "');");
 
