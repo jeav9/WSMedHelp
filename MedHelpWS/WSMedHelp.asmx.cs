@@ -160,7 +160,7 @@ namespace MedHelpWS
         {
             con.Conectar();
             con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico)
-                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "')");
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
             con.Desconectar();
         }
 
