@@ -131,7 +131,17 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar("select Nombre, ID from Personal where Nombre like '%"+nombre+"%' ");
+            ds=con.seleccionar("select Nombre, Apellido, ID from Personal where Nombre like '%"+nombre+"%' ");
+            con.Desconectar();
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet BuscarPersonal(int id)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID like '%" + id + "%' ");
             con.Desconectar();
             return ds;
         }
