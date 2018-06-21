@@ -204,5 +204,19 @@ namespace MedHelpWS
             con.Desconectar();
         }
 
+        //Agregar 
+        [WebMethod]
+        public DataSet BuscarMedicamento()
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,
+                                 DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
+                                 inner join DetellesMed
+                                 on DetellesMed.Codigo = Medicamentos.Codigo").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+
     }
 }
