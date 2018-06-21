@@ -206,14 +206,15 @@ namespace MedHelpWS
 
         //Agregar 
         [WebMethod]
-        public DataSet BuscarMedicamento()
+        public DataSet BuscarMedicamento(string where,string cod)
         {
             DataSet ds = new DataSet();
             con.Conectar();
             ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,
                                  DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
                                  inner join DetellesMed
-                                 on DetellesMed.Codigo = Medicamentos.Codigo").Tables[0].DataSet;
+                                 on DetellesMed.Codigo = Medicamentos.Codigo
+                                 where Medicamentos."+where+" like '%"+cod+"%' ").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
