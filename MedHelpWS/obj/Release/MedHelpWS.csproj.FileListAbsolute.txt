@@ -117,6 +117,7 @@ C:\Users\Elias\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj
 C:\Users\Elias\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj.CopyComplete
 C:\Users\Elias\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.dll
 C:\Users\Elias\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.pdb
+<<<<<<< HEAD
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\bin\MedHelpWS.dll.config
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\bin\MedHelpWS.dll
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\bin\MedHelpWS.pdb
@@ -176,3 +177,64 @@ C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj.CoreCo
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj.CopyComplete
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.dll
 C:\Users\Elias\Documents\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.pdb
+=======
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\MedHelpWS.dll.config
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\MedHelpWS.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\MedHelpWS.pdb
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csc.exe
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csc.exe.config
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csc.rsp
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csi.exe
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csi.exe.config
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\csi.rsp
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.AppContext.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Console.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.IO.Compression.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Claims.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.ValueTuple.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\vbc.exe
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\vbc.exe.config
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\vbc.rsp
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\VBCSCompiler.exe
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\ConexionSql.pdb
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csprojResolveAssemblyReference.cache
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj.CoreCompileInputs.cache
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.csproj.CopyComplete
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.dll
+C:\Users\Carmen Reyes\Documents\GitHub\WSMedHelp\MedHelpWS\obj\Release\MedHelpWS.pdb
+>>>>>>> 3533984baacb7ec287b73721d2ce7890e6acae1b

@@ -131,12 +131,13 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar("select Nombre, ID from Personal where Nombre like '%"+nombre+"%' ");
+            ds=con.seleccionar("select Nombre, Apellido, ID from Personal where Nombre like '%"+nombre+"%' ");
             con.Desconectar();
             return ds;
         }
 
         [WebMethod]
+<<<<<<< HEAD
         public DataSet BuscarPersonal(int id)
         {
             DataSet ds = new DataSet();
@@ -145,5 +146,46 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+=======
+        public DataSet BuscarPer_codigo(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID='" + codigo + "'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+        //hola
+        [WebMethod]
+        public DataSet BuscarPer_nombre(string nombre)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where Nombre='" + nombre + "' ").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+        [WebMethod]
+        public void AddCitas(Citas c)
+        {
+            con.Conectar();
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico,Estado_cita)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
+            con.Desconectar();
+        }
+        [WebMethod]
+        public DataSet Buscar_Cita(string where, string id)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora,Citas.Duracion,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+                             inner join Paciente
+                             on Paciente.id = Citas.id
+                             where "+where+" like '%"+id+"%' ");
+            con.Desconectar();
+            return ds;
+        }
+
+>>>>>>> 3533984baacb7ec287b73721d2ce7890e6acae1b
     }
 }
