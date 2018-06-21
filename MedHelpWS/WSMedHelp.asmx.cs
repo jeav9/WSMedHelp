@@ -137,7 +137,6 @@ namespace MedHelpWS
         }
 
         [WebMethod]
-<<<<<<< HEAD
         public DataSet BuscarPersonal(int id)
         {
             DataSet ds = new DataSet();
@@ -146,7 +145,7 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
-=======
+        [WebMethod]
         public DataSet BuscarPer_codigo(string codigo)
         {
             DataSet ds = new DataSet();
@@ -186,6 +185,15 @@ namespace MedHelpWS
             return ds;
         }
 
->>>>>>> 3533984baacb7ec287b73721d2ce7890e6acae1b
+        [WebMethod]
+        public DataSet MedicamentoFac(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Codigo,Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+
     }
 }
