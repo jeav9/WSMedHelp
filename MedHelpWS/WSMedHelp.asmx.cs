@@ -137,6 +137,15 @@ namespace MedHelpWS
         }
 
         [WebMethod]
+        public DataSet BuscarPersonal(int id)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID like '%" + id + "%' ");
+            con.Desconectar();
+            return ds;
+        }
+        [WebMethod]
         public DataSet BuscarPer_codigo(string codigo)
         {
             DataSet ds = new DataSet();
@@ -174,6 +183,25 @@ namespace MedHelpWS
                              where "+where+" like '%"+id+"%' ");
             con.Desconectar();
             return ds;
+        }
+
+        [WebMethod]
+        public DataSet MedicamentoFac(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Codigo,Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+        //Agregar Medicacion 
+        [WebMethod]
+        public void AgregarMedicacion(string id,string codigo,string dosis,double cant)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Medicacion
+                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ")");
+            con.Desconectar();
         }
 
     }
