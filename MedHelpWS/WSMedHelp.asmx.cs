@@ -137,6 +137,15 @@ namespace MedHelpWS
         }
 
         [WebMethod]
+        public DataSet BuscarPersonal(int id)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID like '%" + id + "%' ");
+            con.Desconectar();
+            return ds;
+        }
+        [WebMethod]
         public DataSet BuscarPer_codigo(string codigo)
         {
             DataSet ds = new DataSet();
@@ -172,6 +181,16 @@ namespace MedHelpWS
                              inner join Paciente
                              on Paciente.id = Citas.id
                              where "+where+" like '%"+id+"%' ");
+            con.Desconectar();
+            return ds;
+        }
+
+        [WebMethod]
+        public DataSet MedicamentoFac(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Codigo,Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
