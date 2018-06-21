@@ -218,6 +218,15 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+        //Actualizar Cita
+        [WebMethod]
+        public void UpdateCita(string id,string estado)
+        {
+            con.Conectar();
+            con.insomod(@"update Citas
+                        set Estado_Cita= '"+estado+"' where id='"+id+"' ");
+            con.Desconectar();
+        }
 
     }
 }
