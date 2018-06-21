@@ -194,6 +194,15 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+        //Agregar Medicacion 
+        [WebMethod]
+        public void AgregarMedicacion(string id,string codigo,string dosis,double cant)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Medicacion
+                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ")");
+            con.Desconectar();
+        }
 
     }
 }
