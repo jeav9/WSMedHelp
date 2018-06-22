@@ -246,5 +246,14 @@ namespace MedHelpWS
             con.Desconectar();
         }
 
+        [WebMethod]
+        public DataSet BuscarMedCod(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds=con.seleccionar(@"select Codigo, Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
     }
 }
