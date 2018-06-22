@@ -177,7 +177,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar(@"select CONVERT(varchar(10),Citas.Fecha,103) as Fecha ,Citas.Hora_Inicio,Citas.Hora_Final,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora_Inicio,Citas.Hora_Final,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
                              inner join Paciente
                              on Paciente.id = Citas.id
                              where " + where+" like '%"+id+"%' ");
@@ -254,6 +254,7 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+
         [WebMethod]
         public void AgregarConsulta(Consulta c)
         {
@@ -261,6 +262,16 @@ namespace MedHelpWS
             con.insomod(@"insert into Consulta
                           values('"+c.id+ "','"+c.fecha+ "','"+c.d_1+ "','"+c.d_2+ "','"+c.d_3+ "','"+c.d_4+ "','"+c.Observacions+ "','"+c.NumColegiado+ "','"+c.NomMedico+"')");
             con.Desconectar();
+        }
+
+        [WebMethod]
+        public DataSet BuscarFactura(string Numfac)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select NombrePer,NumeroID,RTN,Fecha from Factura1 where CodigoFac like '%" + Numfac + "%'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
         }
     }
 }
