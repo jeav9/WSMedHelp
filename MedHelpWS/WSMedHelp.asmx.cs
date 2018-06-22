@@ -84,7 +84,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@" insert into Paciente
                            values ('" + pc.id + "','" + pc.nombre + "','" + pc.apellido + "','" + pc.genero + "'," +
-                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "'," + pc.Seguro + ",'" + pc.telefono + "'," +
+                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "','" + pc.NSeguro + "','" + pc.telefono + "'," +
                            "'" + pc.estatura + "','" + pc.sangre + "','" + pc.peso + "','" + pc.adicciones + "'," +
                            "'" + pc.alergias + "','" + pc.enfermedadFamilia + "','" + pc.enfermedadPequeno + "');");
 
@@ -105,7 +105,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@"insert into Diagnostico 
                           values ('"+diag.id+ "','"+diag.nombres+ "','"+diag.apellidos+ "','"+diag.genero+ "','"+diag.Nseguro+"'," +
-                          "'"+diag.sintomasP+ "','"+diag.observaciones+"');");
+                          "'"+diag.sintomasP+ "','"+diag.observaciones+"','"+diag.NumColegiado+"','"+diag.NomMedico+"');");
             con.Desconectar();
         }
         [WebMethod]
@@ -196,11 +196,11 @@ namespace MedHelpWS
         }
         //Agregar Medicacion 
         [WebMethod]
-        public void AgregarMedicacion(string id,string codigo,string dosis,double cant)
+        public void AgregarMedicacion(string id,string codigo,string dosis,double cant,string NC,string NM)
         {
             con.Conectar();
             con.insomod(@"insert into Medicacion
-                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ")");
+                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ",'"+NC+ "','" + NM + "')");
             con.Desconectar();
         }
 
@@ -253,6 +253,14 @@ namespace MedHelpWS
             ds=con.seleccionar(@"select Codigo, Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
+        }
+        [WebMethod]
+        public void AgregarConsulta(Consulta c)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Consulta
+                          values('"+c.id+ "','"+c.fecha+ "','"+c.d_1+ "','"+c.d_2+ "','"+c.d_3+ "','"+c.d_4+ "','"+c.Observacions+ "','"+c.NumColegiado+ "','"+c.NomMedico+"')");
+            con.Desconectar();
         }
     }
 }
