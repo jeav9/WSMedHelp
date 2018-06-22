@@ -14,7 +14,7 @@ namespace MedHelpWS
         public string fechaNacimiento { get; set; }
         public string Domicilio { get; set; }
         public string fechaIngreso { get; set; }
-        public string Seguro { get; set; }
+        public string NSeguro { get; set; }
         public string telefono { get; set; }
         public string estatura { get; set; }
         public string sangre { get; set; }
