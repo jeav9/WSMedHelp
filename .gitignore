@@ -1,3 +1,8 @@
 
 *.lock
 *.ide
+.vs/MedHelpWS/v15/Server/sqlite3/storage.ide
+.vs/MedHelpWS/v15/Server/sqlite3/storage.ide
+*.ide-wal
+.vs/MedHelpWS/v15/Server/sqlite3/storage.ide
+.vs/MedHelpWS/v15/Server/sqlite3/storage.ide-wal
