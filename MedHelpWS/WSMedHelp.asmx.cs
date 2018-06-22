@@ -237,11 +237,11 @@ namespace MedHelpWS
         }
 
         [WebMethod]
-        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, int Cant, double PrecioUni, double Total)
+        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, string TipoMed, int Cant, double PrecioUni, double Total)
         {
             con.Conectar();
             con.insomod(@"insert into DetallesFac
-                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "'," + Cant + "," + PrecioUni + "," + Total + ")");
+                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "','" +TipoMed + "'," + Cant + "," + PrecioUni + "," + Total + ")");
             con.Desconectar();
         }
 
