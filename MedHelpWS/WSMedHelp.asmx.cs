@@ -177,10 +177,10 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora,Citas.Duracion,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora_Inicio,Citas.Hora_Final,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
                              inner join Paciente
                              on Paciente.id = Citas.id
-                             where "+where+" like '%"+id+"%' ");
+                             where " + where+" like '%"+id+"%' ");
             con.Desconectar();
             return ds;
         }
