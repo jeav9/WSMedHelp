@@ -229,16 +229,15 @@ namespace MedHelpWS
         }
 
         [WebMethod]
-        public void AgregarFac(string NumFac, string RTN, string NombrePac, string IDPac, string Fecha)
+        public void AgregarFac(string RTN, string NombrePac, string IDPac, string Fecha)
         {
             con.Conectar();
-            con.insomod(@"insert into Factura1
-                          values (" + NumFac + ",'" + RTN + "','" + NombrePac + "'," + IDPac + ",'" + Fecha + "')");
+            con.insomod(@"insert into Factura1(RTN,NombrePer,NumeroID,Fecha) values('" + RTN + "','" + NombrePac + "','" + IDPac + "','" + Fecha + "')");
             con.Desconectar();
         }
 
         [WebMethod]
-        public void AgregarDetallesFac(string NumFac, string Codigo, string Medic, string Cant, string PrecioUni, string Total)
+        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, int Cant, double PrecioUni, double Total)
         {
             con.Conectar();
             con.insomod(@"insert into DetallesFac
