@@ -168,8 +168,8 @@ namespace MedHelpWS
         public void AddCitas(Citas c)
         {
             con.Conectar();
-            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico,Estado_cita)
-                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora_Inicio,Hora_Final,  Descripcion, NumColegiado, NomMedico,Estado_cita)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora_Inicio + "','" + c.Hora_Final + "','" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
             con.Desconectar();
         }
         [WebMethod]
@@ -177,10 +177,10 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora,Citas.Duracion,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora_Inicio,Citas.Hora_Final,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
                              inner join Paciente
                              on Paciente.id = Citas.id
-                             where "+where+" like '%"+id+"%' ");
+                             where " + where+" like '%"+id+"%' ");
             con.Desconectar();
             return ds;
         }
