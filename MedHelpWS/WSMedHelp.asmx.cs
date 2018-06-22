@@ -168,8 +168,8 @@ namespace MedHelpWS
         public void AddCitas(Citas c)
         {
             con.Conectar();
-            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico,Estado_cita)
-                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora_Inicio,Hora_Final,  Descripcion, NumColegiado, NomMedico,Estado_cita)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora_Inicio + "','" + c.Hora_Final + "','" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
             con.Desconectar();
         }
         [WebMethod]
