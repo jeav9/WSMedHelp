@@ -14,6 +14,8 @@ namespace MedHelpWS
         public string Nseguro { get; set; }
         public string sintomasP { get; set; }
         public string observaciones { get; set; }
+        public string NumColegiado { get; set; }
+        public string NomMedico { get; set; }
 
     }
 }
