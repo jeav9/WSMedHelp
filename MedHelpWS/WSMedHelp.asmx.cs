@@ -194,6 +194,57 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+        //Agregar Medicacion 
+        [WebMethod]
+        public void AgregarMedicacion(string id,string codigo,string dosis,double cant)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Medicacion
+                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ")");
+            con.Desconectar();
+        }
+
+        //Agregar 
+        [WebMethod]
+        public DataSet BuscarMedicamento(string where,string cod)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,
+                                 DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
+                                 inner join DetellesMed
+                                 on DetellesMed.Codigo = Medicamentos.Codigo
+                                 where Medicamentos."+where+" like '%"+cod+"%' ").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+        //Actualizar Cita
+        [WebMethod]
+        public void UpdateCita(string id,string estado)
+        {
+            con.Conectar();
+            con.insomod(@"update Citas
+                        set Estado_Cita= '"+estado+"' where id='"+id+"' ");
+            con.Desconectar();
+        }
+
+        //[WebMethod]
+        //public void AgregarFac(string )
+        //{
+        //    con.Conectar();
+        //    con.insomod(@"insert into Factura1
+        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
+        //    con.Desconectar();
+        //}
+
+        //[WebMethod]
+        //public void AgregarDetallesFac(string NumFac, string Codigo, string Medic, string Cant, string PrecioUni, string Total)
+        //{
+        //    con.Conectar();
+        //    con.insomod(@"insert into Medicacion
+        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
+        //    con.Desconectar();
+        //}
 
     }
 }
