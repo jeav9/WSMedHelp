@@ -228,23 +228,23 @@ namespace MedHelpWS
             con.Desconectar();
         }
 
-        //[WebMethod]
-        //public void AgregarFac(string )
-        //{
-        //    con.Conectar();
-        //    con.insomod(@"insert into Factura1
-        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
-        //    con.Desconectar();
-        //}
+        [WebMethod]
+        public void AgregarFac(string NumFac, string RTN, string NombrePac, string IDPac, string Fecha)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Factura1
+                          values (" + NumFac + ",'" + RTN + "','" + NombrePac + "'," + IDPac + ",'" + Fecha + "')");
+            con.Desconectar();
+        }
 
-        //[WebMethod]
-        //public void AgregarDetallesFac(string NumFac, string Codigo, string Medic, string Cant, string PrecioUni, string Total)
-        //{
-        //    con.Conectar();
-        //    con.insomod(@"insert into Medicacion
-        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
-        //    con.Desconectar();
-        //}
+        [WebMethod]
+        public void AgregarDetallesFac(string NumFac, string Codigo, string Medic, string Cant, string PrecioUni, string Total)
+        {
+            con.Conectar();
+            con.insomod(@"insert into DetallesFac
+                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "'," + Cant + "," + PrecioUni + "," + Total + ")");
+            con.Desconectar();
+        }
 
     }
 }
