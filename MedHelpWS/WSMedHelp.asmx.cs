@@ -269,7 +269,7 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds = con.seleccionar(@"select NombrePer,NumeroID,RTN,Fecha from Factura1 where CodigoFac like '%" + Numfac + "%'").Tables[0].DataSet;
+            ds = con.seleccionar(@"select CodigoFac,NombrePer,NumeroID,RTN,Fecha from Factura1 where CodigoFac like '%" + Numfac + "%'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
         }
