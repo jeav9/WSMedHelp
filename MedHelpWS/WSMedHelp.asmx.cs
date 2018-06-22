@@ -84,7 +84,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@" insert into Paciente
                            values ('" + pc.id + "','" + pc.nombre + "','" + pc.apellido + "','" + pc.genero + "'," +
-                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "'," + pc.Seguro + ",'" + pc.telefono + "'," +
+                           "'" + pc.fechaNacimiento + "','" + pc.Domicilio + "','" + pc.NSeguro + "','" + pc.telefono + "'," +
                            "'" + pc.estatura + "','" + pc.sangre + "','" + pc.peso + "','" + pc.adicciones + "'," +
                            "'" + pc.alergias + "','" + pc.enfermedadFamilia + "','" + pc.enfermedadPequeno + "');");
 
@@ -105,7 +105,7 @@ namespace MedHelpWS
             con.Conectar();
             con.insomod(@"insert into Diagnostico 
                           values ('"+diag.id+ "','"+diag.nombres+ "','"+diag.apellidos+ "','"+diag.genero+ "','"+diag.Nseguro+"'," +
-                          "'"+diag.sintomasP+ "','"+diag.observaciones+"');");
+                          "'"+diag.sintomasP+ "','"+diag.observaciones+"','"+diag.NumColegiado+"','"+diag.NomMedico+"');");
             con.Desconectar();
         }
         [WebMethod]
@@ -168,8 +168,8 @@ namespace MedHelpWS
         public void AddCitas(Citas c)
         {
             con.Conectar();
-            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora, Duracion, Descripcion, NumColegiado, NomMedico,Estado_cita)
-                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora + "', " + c.Duracion + ", '" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
+            con.insomod(@"INSERT INTO Citas(id, Fecha, Hora_Inicio,Hora_Final,  Descripcion, NumColegiado, NomMedico,Estado_cita)
+                        values('" + c.id + "', '" + c.Fecha + "', '" + c.Hora_Inicio + "','" + c.Hora_Final + "','" + c.Descripcion + "', '" + c.NumColegiado + "', '" + c.NomMedico + "','"+c.Estado_cita+"')");
             con.Desconectar();
         }
         [WebMethod]
@@ -177,10 +177,10 @@ namespace MedHelpWS
         {
             DataSet ds = new DataSet();
             con.Conectar();
-            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora,Citas.Duracion,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
+            ds=con.seleccionar(@"select Citas.Fecha,Citas.Hora_Inicio,Citas.Hora_Final,Paciente.nombres +' '+ Paciente.apellidos as Paciente,Paciente.id,Citas.Descripcion,Citas.NomMedico as Medico,Citas.Estado_cita from Citas
                              inner join Paciente
                              on Paciente.id = Citas.id
-                             where "+where+" like '%"+id+"%' ");
+                             where " + where+" like '%"+id+"%' ");
             con.Desconectar();
             return ds;
         }
@@ -196,11 +196,11 @@ namespace MedHelpWS
         }
         //Agregar Medicacion 
         [WebMethod]
-        public void AgregarMedicacion(string id,string codigo,string dosis,double cant)
+        public void AgregarMedicacion(string id,string codigo,string dosis,double cant,string NC,string NM)
         {
             con.Conectar();
             con.insomod(@"insert into Medicacion
-                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ")");
+                          values ('"+id+ "','" + codigo + "','" + dosis + "'," + cant + ",'"+NC+ "','" + NM + "')");
             con.Desconectar();
         }
 
@@ -218,24 +218,49 @@ namespace MedHelpWS
             con.Desconectar();
             return ds;
         }
+        //Actualizar Cita
+        [WebMethod]
+        public void UpdateCita(string id,string estado)
+        {
+            con.Conectar();
+            con.insomod(@"update Citas
+                        set Estado_Cita= '"+estado+"' where id='"+id+"' ");
+            con.Desconectar();
+        }
 
-        //[WebMethod]
-        //public void AgregarFac(string )
-        //{
-        //    con.Conectar();
-        //    con.insomod(@"insert into Factura1
-        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
-        //    con.Desconectar();
-        //}
+        [WebMethod]
+        public void AgregarFac(string RTN, string NombrePac, string IDPac, string Fecha)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Factura1(RTN,NombrePer,NumeroID,Fecha) values('" + RTN + "','" + NombrePac + "','" + IDPac + "','" + Fecha + "')");
+            con.Desconectar();
+        }
 
-        //[WebMethod]
-        //public void AgregarDetallesFac(string NumFac, string Codigo, string Medic, string Cant, string PrecioUni, string Total)
-        //{
-        //    con.Conectar();
-        //    con.insomod(@"insert into Medicacion
-        //                  values ('" + id + "','" + codigo + "','" + dosis + "'," + cant + ")");
-        //    con.Desconectar();
-        //}
+        [WebMethod]
+        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, string TipoMed, int Cant, double PrecioUni, double Total)
+        {
+            con.Conectar();
+            con.insomod(@"insert into DetallesFac
+                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "','" +TipoMed + "'," + Cant + "," + PrecioUni + "," + Total + ")");
+            con.Desconectar();
+        }
 
+        [WebMethod]
+        public DataSet BuscarMedCod(string codigo)
+        {
+            DataSet ds = new DataSet();
+            con.Conectar();
+            ds=con.seleccionar(@"select Codigo, Cantidad from Medicacion where id='"+codigo+"'").Tables[0].DataSet;
+            con.Desconectar();
+            return ds;
+        }
+        [WebMethod]
+        public void AgregarConsulta(Consulta c)
+        {
+            con.Conectar();
+            con.insomod(@"insert into Consulta
+                          values('"+c.id+ "','"+c.fecha+ "','"+c.d_1+ "','"+c.d_2+ "','"+c.d_3+ "','"+c.d_4+ "','"+c.Observacions+ "','"+c.NumColegiado+ "','"+c.NomMedico+"')");
+            con.Desconectar();
+        }
     }
 }
