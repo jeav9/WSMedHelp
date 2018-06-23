@@ -146,25 +146,6 @@ namespace MedHelpWS
             return ds;
         }
         [WebMethod]
-        public DataSet BuscarPer_codigo(string codigo)
-        {
-            DataSet ds = new DataSet();
-            con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where ID='" + codigo + "'").Tables[0].DataSet;
-            con.Desconectar();
-            return ds;
-        }
-        //hola
-        [WebMethod]
-        public DataSet BuscarPer_nombre(string nombre)
-        {
-            DataSet ds = new DataSet();
-            con.Conectar();
-            ds = con.seleccionar("select NIdentidad,Nombre,Apellido,Edad,Genero,Estado,Foto from Personal where Nombre='" + nombre + "' ").Tables[0].DataSet;
-            con.Desconectar();
-            return ds;
-        }
-        [WebMethod]
         public void AddCitas(Citas c)
         {
             con.Conectar();
@@ -272,6 +253,23 @@ namespace MedHelpWS
             ds = con.seleccionar(@"select CodigoFac,NombrePer,NumeroID,RTN,Fecha from Factura1 where CodigoFac like '%" + Numfac + "%'").Tables[0].DataSet;
             con.Desconectar();
             return ds;
+        }
+
+        [WebMethod]
+        public void EliminarPersonal(string cod)
+        {
+            con.Conectar();
+            con.insomod(@"delete from Personal where cod='"+cod+"'");
+            con.Desconectar();
+        }
+
+        [WebMethod]
+        public void ModificarPersonal(Personal p)
+        {
+            con.Conectar();
+            con.insomod(@"update Personal set NIdentidad='"+p.Identidad+"',Nombre='"+p.Nombre+ "',Apellido='" + p.Apellido + "',Edad=" + p.Edad + ",Genero='" + p.Genero + "'," +
+                "Estado='" + p.Estado + "'");
+            con.Desconectar();
         }
     }
 }
