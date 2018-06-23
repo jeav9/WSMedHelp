@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-<<<<<<< HEAD
   <IisApp path="C:\Users\Elias\Documents\medhelp\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" />
   <setAcl path="C:\Users\Elias\Documents\medhelp\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
   <setAcl path="C:\Users\Elias\Documents\medhelp\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-=======
-  <IisApp path="C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" />
-  <setAcl path="C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\Users\jorge\OneDrive\Ceutec_2_año\segundo_Trimestre\Programacion_lV\WSMedHelp\MedHelpWS\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
->>>>>>> 08a125bc683f8bb0cf45b6d09ae11dd5318fed5d
 </sitemanifest>
