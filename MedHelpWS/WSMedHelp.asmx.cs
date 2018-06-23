@@ -259,7 +259,7 @@ namespace MedHelpWS
         public void EliminarPersonal(string cod)
         {
             con.Conectar();
-            con.insomod(@"delete from Personal where cod='"+cod+"'");
+            con.insomod(@"delete from Personal where NIdentidad='"+cod+"'");
             con.Desconectar();
         }
 
