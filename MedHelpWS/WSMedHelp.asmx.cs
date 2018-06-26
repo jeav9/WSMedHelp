@@ -27,7 +27,7 @@ namespace MedHelpWS
             DataSet ds = new DataSet();
             con.Conectar();
             ds = con.seleccionar(@"select Medicamentos.Codigo,Medicamentos.Nombre,DetellesMed.Cantidad,Medicamentos.Descripcion,DetellesMed.NRegistro,
-                                    DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
+                                    DetellesMed.CompActivo, DetellesMed.Gramaje, DetellesMed.TipoMed, DetellesMed.CostoUni from Medicamentos
                                     inner join DetellesMed
                                     on DetellesMed.Codigo = Medicamentos.Codigo
                                     where Medicamentos.Codigo like '%"+codigo+"%'").Tables[0].DataSet;
@@ -218,11 +218,11 @@ namespace MedHelpWS
         }
 
         [WebMethod]
-        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, string TipoMed, int Cant, double PrecioUni, double Total)
+        public void AgregarDetallesFac(int NumFac, string Codigo, string Medic, string TipoMed,int CantAct, int Cant, double PrecioUni, double Total)
         {
             con.Conectar();
             con.insomod(@"insert into DetallesFac
-                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "','" +TipoMed + "'," + Cant + "," + PrecioUni + "," + Total + ")");
+                          values (" + NumFac + ",'" + Codigo + "','" + Medic + "','" +TipoMed + "'," + CantAct + "," + Cant + "," + PrecioUni + "," + Total + ")");
             con.Desconectar();
         }
 
@@ -259,7 +259,7 @@ namespace MedHelpWS
         public void EliminarPersonal(string cod)
         {
             con.Conectar();
-            con.insomod(@"delete from Personal where cod='"+cod+"'");
+            con.insomod(@"delete from Personal where NIdentidad='"+cod+"'");
             con.Desconectar();
         }
 
